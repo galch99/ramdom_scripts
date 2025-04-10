@@ -1,0 +1,37 @@
+@ECHO OFF
+
+title Shortcut Virus Remover By Galch.O
+echo Just enter the drive letter of the infected drive:
+
+:START
+set/p "d="
+
+if EXIST %d%:\ goto DO
+if NOT EXIST %d%:\ goto DONOT
+
+:DO
+echo If you have more files, it may take more time. So, please, be patient...
+
+del /a /q /s %d%:\*.lnk
+
+attrib -s -h -r *.* /s /d /l
+
+
+
+echo ___________________________________________________________________________________________
+echo Done!!!!
+echo All files have successfully been recovered from drive %d%
+echo 
+echo %d% dotorh nerlegdeegui folder huuchin file-uud huulagdsan
+echo ___________________________________________________________________________________________
+echo ___________________________________________________________________________________________
+ECHO Press Enter key to close the window...
+set/p "k="
+goto END
+
+:DONOT
+echo Zuuvriin disknii useg buruu baina!!!
+echo Dahin shalgana uu:
+goto START
+
+:END
